@@ -6,21 +6,22 @@ import { useSelector } from 'react-redux'
 const Home = () => {
 
     const product = useSelector((state) => state)
-    console.log(product.allProduct.products)
 
-    const productResult = product.allProduct.products
 
+  
+
+    const FilterProduct = product.allFilterProduct.filterResult
+
+console.log(product.allFilterProduct.filterResult)
     
 
-    // {
-    //     productResult===undefined?<h1>Loading ....</h1>:
-    // }
+  
     return (
         <div className ='card-flex-Container'>
          {
-                 productResult===undefined?<h1>Loading ....</h1>:<>{
+            FilterProduct===undefined?<h1>Loading ....</h1>:<>{
                 
-                    productResult.map((el) => {
+                FilterProduct.map((el) => {
                         return(
                             <div className ='container-Card'>
                             

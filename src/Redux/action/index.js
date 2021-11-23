@@ -8,3 +8,10 @@ export const fetchUser = (products) => {
 
 } 
 
+export const filterUser = (Data) => {
+     return{
+         type:ActionTypes.FILTER_DATA,
+         payload:Data
+     }
+ }
+
