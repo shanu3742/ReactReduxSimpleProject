@@ -11,7 +11,7 @@ function App() {
   const dispatch = useDispatch()
 
   const fetchData = async() => {
-    const result = await fetch('https://jsonplaceholder.typicode.com/users')
+    const result = await fetch('https://fakestoreapi.com/products')
     const jResult = await result.json()
     dispatch(fetchUser(jResult))
 
@@ -22,11 +22,11 @@ function App() {
   return (
     <Router >
     <div className="App">
-    <h1>Hello Heading</h1>
+    <h1 className ="price-card">Shoping App</h1>
     <Routes>
     <Route path='/' exact element={<Home/>} />
     <Route path='/home' exact element={<h1>Hello</h1>} />
-    <Route path='/home/:homeId' exact exact element={<ProductDetails />} />
+    <Route path='/home/:homeId'  exact element={<ProductDetails />} />
     </Routes>
 
     
