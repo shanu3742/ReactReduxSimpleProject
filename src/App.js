@@ -7,6 +7,9 @@ import React from 'react';
 import ProductDetails from './container/ProductDetails.js';
 import { useSelector } from 'react-redux'
 import { filterUser } from './Redux/action/index.js';
+import ShovingCartHeader from './container/ShovingCartHeader.js';
+import ShopingCart from './container/ShopingCart.js';
+import ShopingCard from './container/ShopingCard.js';
 
 function App() {
 
@@ -24,32 +27,23 @@ function App() {
   },[fetchData])
 
   
-  const product = useSelector((state) => state)
   
 
-  const productResult = product.allProduct.products
-
   //Low cost to high Cost (Increase  in order)
-  const getClick  = () => {
-    console.log('hey')
-   const result=  productResult.sort(function(a, b){
-
-    
-      return a.price- b.price
-    });
-    dispatch(filterUser(result))
-
-  }
-  console.log(product)
+ 
+  // console.log(product)
   return (
     <Router >
     <div className="App">
-    <h1 className ="price-card">Shoping App</h1>
-    <button onClick= {getClick}>low cost</button>
+   
+   <ShovingCartHeader />
+    
+    
     <Routes>
     <Route path='/' exact element={<Home/>} />
     <Route path='/home' exact element={<h1>Hello</h1>} />
     <Route path='/home/:homeId'  exact element={<ProductDetails />} />
+    <Route path='/home/viewCart' exact element={<ShopingCard />} />
     </Routes>
 
     

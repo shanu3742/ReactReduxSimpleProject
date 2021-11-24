@@ -5,6 +5,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import store from './Redux/store'
+import 'rsuite/dist/rsuite.min.css'; // or 'rsuite/dist/rsuite.min.css'
 
 ReactDOM.render(
   <React.StrictMode>

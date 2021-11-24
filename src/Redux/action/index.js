@@ -15,3 +15,15 @@ export const filterUser = (Data) => {
      }
  }
 
+export const selectedItem = (item) => {
+    return{
+        type:ActionTypes.SINGLE_SELECTED_ITEM,
+        payload:item
+    }
+}
+export const specificProduct = (item) => {
+    return{
+        type:ActionTypes.SPECIFIC_PRODECT,
+        payload:item
+    }
+}
